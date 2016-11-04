@@ -1,0 +1,25 @@
+{
+  "name": "html2md",
+  "version": "1.0.0",
+  "description": "this tool convert html fragment to markdown,it would development with javascript node..etc.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/physihan/html2md.git"
+  },
+  "keywords": [
+    "markdown"
+  ],
+  "author": "physihan",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/physihan/html2md/issues"
+  },
+  "homepage": "https://github.com/physihan/html2md#readme",
+  "dependencies": {
+    "to-markdown": "^3.0.3"
+  }
+}
