@@ -6,6 +6,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <script src="http://libs.baidu.com/jquery/1.9.1/jquery.min.js"></script>
+    <script src="./src/to-markdown.js"></script>
     <!--<link href="css/style.css" rel="stylesheet">-->
     <style>
         body {
@@ -16,45 +17,71 @@
             padding-top: 10%;
         }
         
-        body:after {
-            /*最简方式*/
+        .html {
+            /*position:relative;*/
+            /*display: inline-block;*/
+            background-color: #fff;
+            width: 45%;
+            position: absolute;
+            left: 0;
+            /*float: left;*/
+            border: 1px solid #fff;
+            height: 400px;
+            border-radius: 5px;
+        }
+        
+        .container {
+            position: relative;
+            height: 450px;
+        }
+        /*.markdown:after {
+           
             content: '';
             display: block;
             clear: both;
         }
+        */
         
-        .html {
-            background-color: #fff;
+        .markdown {
             width: 45%;
-            float: left;
+            /*display: inline-block;*/
+            /*position:relative;*/
+            position: absolute;
+            right: 0;
+            /*float: right;*/
             border: 1px solid #fff;
             height: 400px;
             border-radius: 5px;
         }
         
-        .markdown {
-            width: 45%;
-            float: right;
-            border: 1px solid #fff;
-            height: 400px;
-            border-radius: 5px;
+        #copy {
+            position: absolute;
+            bottom: 0;
+            right: 0;
+        }
+        
+        #convert {
+            display: block;
+            margin: 10px auto;
         }
     </style>
 </head>
 
 <body>
-	<h1>qqqq</h1>
-	<div class="container">
-   <iframe frameborder="1" class="html">
+    <h1>请在左边框里粘贴需要转换的html片段，点击convert即可转换</h1>
+    <div class="container">
+        <iframe frameborder="1" class="html"> 
 	</iframe>
-    <!--<div class="html">
+        <!--<div class="html">
 
 	</div>-->
-    <div class="markdown">
-
+        <div class="markdown">
+            <div id="content"></div>
+            <button id="copy">一键复制</button>
+        </div>
     </div>
-	</div>
- 
+
+    <button id="convert" onclick="convert()">convert</button>
 </body>
 <script>
     $iframe = $("iframe");
@@ -62,6 +89,43 @@
 
     doc.designMode = 'on';
     console.log("111")
+
+    function convert() {
+        var str = doc.body.innerHTML;
+        str = toMarkdown(str);
+        str = str.replace(/~/g, '~T');
+        str = str.replace(/`/g, '~E');
+        str = str.replace(/\$/g, '~D');
+        str = toMarkdown(str, {
+            gfm: true
+        });
+        var cnum = 0,
+            arrcode = [];
+        str = str.replace(/~~~([\s\S]*?)~~~/g, function(all) { //code特殊处理
+            cnum++;
+            arrcode[cnum] = all;
+            return "[\tcodeplace_" + cnum + "\t]";
+        });
+        str = str.replace(/(`+)([^\r]*?[^`])\1(?!`)/g, function(wholeMatch, m1, m2, m3) { //code特殊处理
+            cnum++;
+            arrcode[cnum] = wholeMatch;
+            return "[\tcodeplace_" + cnum + "\t]";
+        });
+        str = str.replace(/<\/?.+?>/g, "");
+        str = str.replace(/\n{2,}/g, "\n\n");
+
+        for (var i = 1; i <= cnum; i++) {
+            str = str.replace("[\tcodeplace_" + i + "\t]", function() {
+                return arrcode[i];
+            });
+        }
+
+        str = str.replace(/~D/g, '$$');
+        str = str.replace(/~E/g, '`');
+        str = str.replace(/~T/g, '~');
+        $("#content").html(str);
+        alert("11")
+    }
 </script>
 
 </html>
