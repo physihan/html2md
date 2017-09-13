@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title></title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="http://libs.baidu.com/jquery/1.9.1/jquery.min.js"></script>
+    <script src="./src/to-markdown.js"></script>
+    <!--<link href="css/style.css" rel="stylesheet">-->
+    <style>
+        body {
+            margin: 0;
+            padding: 5%;
+            background: #bedba4;
+            overflow: hidden;
+            padding-top: 10%;
+        }
+        
+        .html {
+            /*position:relative;*/
+            /*display: inline-block;*/
+            background-color: #fff;
+            width: 45%;
+            position: absolute;
+            left: 0;
+            /*float: left;*/
+            border: 1px solid #fff;
+            height: 400px;
+            border-radius: 5px;
+        }
+        
+        .container {
+            position: relative;
+            height: 450px;
+        }
+        /*.markdown:after {
+           
+            content: '';
+            display: block;
+            clear: both;
+        }
+        */
+        
+        .markdown {
+            width: 45%;
+            /*display: inline-block;*/
+            /*position:relative;*/
+            position: absolute;
+            right: 0;
+            /*float: right;*/
+            border: 1px solid #fff;
+            height: 400px;
+            border-radius: 5px;
+        }
+        
+        #copy {
+            position: absolute;
+            bottom: 0;
+            right: 0;
+        }
+        
+        #convert {
+            display: block;
+            margin: 10px auto;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>请在左边框里粘贴需要转换的html片段，点击convert即可转换</h1>
+    <div class="container">
+        <iframe frameborder="1" class="html"> 
+	</iframe>
+        <!--<div class="html">
+
+	</div>-->
+        <div class="markdown">
+            <div id="content"></div>
+            <button id="copy">一键复制</button>
+        </div>
+    </div>
+
+    <button id="convert" onclick="convert()">convert</button>
+</body>
+<script>
+   var breakdance = require('breakdance');
+console.log(breakdance('<strong>The freaks come out at night!</strong>'));
+</script>
+
+</html>

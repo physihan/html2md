@@ -1,0 +1,41 @@
+.header {
+  height: 70px;
+  background: #ccc;
+  box-shadow: 0 2px 1px 1px #555151;
+  text-align: center;
+}
+.main {
+  display: flex;
+  padding: 20px;
+  justify-content: space-between;
+  /* background: #E0D0D0; */
+}
+.text-box {
+  /* border: 1px solid #DDB8B8; */
+  box-shadow: 0 0 1px 1px #f5e0e0;
+  box-shadow: inset 0 0 1px 5px #ccc;
+
+  width: 49%;
+  background: white;
+  min-height: 600px;
+}
+.markdown {
+  position: relative;
+  padding: 6px;
+  textarea {
+    display: block;
+    position: absolute;
+    top: 1%;
+    left: 1%;
+    right: auto;
+    bottom: 11px;
+      resize: none;
+    // background: #0c0707;
+height: 98%;
+      width: 98%;
+  }
+  /* flex:0.5; */
+}
+.preview {
+  /* flex:0.5; */
+}
