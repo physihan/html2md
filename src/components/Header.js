@@ -1,10 +1,14 @@
 import React, { Component } from 'react';
 
 class Header extends Component {
+  importMD() {
+    alert('ss');
+  }
   render() {
     return (
       <header className="header">
         header
+        <button onClick={this.importMD}>导入</button>
       </header>
     );
   }

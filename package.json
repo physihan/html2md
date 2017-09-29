@@ -21,6 +21,7 @@
   "homepage": "https://github.com/physihan/html2md#readme",
   "dependencies": {
     "breakdance": "^3.0.1",
+    "marked": "^0.3.6",
     "react": "^15.6.1",
     "react-dom": "^15.6.1",
     "react-markings": "^1.1.4",
@@ -32,6 +33,7 @@
     "babel-preset-env": "^1.6.0",
     "babel-preset-es2015": "^6.24.1",
     "babel-preset-react": "^6.24.1",
+    "node-sass": "^4.5.3",
     "webpack": "^3.5.6"
   }
 }
