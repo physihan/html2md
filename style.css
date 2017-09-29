@@ -28,15 +28,10 @@
 }
 
 .markdown textarea {
-  display: block;
-  position: absolute;
-  top: 1%;
-  left: 1%;
-  right: auto;
-  bottom: 11px;
+  box-sizing: border-box;
   resize: none;
-  height: 98%;
-  width: 98%;
+  height: 100%;
+  width: 100%;
 }
 
 .preview {

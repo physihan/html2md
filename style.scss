@@ -23,16 +23,12 @@
   position: relative;
   padding: 6px;
   textarea {
-    display: block;
-    position: absolute;
-    top: 1%;
-    left: 1%;
-    right: auto;
-    bottom: 11px;
-      resize: none;
-    // background: #0c0707;
-height: 98%;
-      width: 98%;
+    box-sizing: border-box;
+
+    resize: none;
+
+    height: 100%;
+    width: 100%;
   }
   /* flex:0.5; */
 }
