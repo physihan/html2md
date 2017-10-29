@@ -1,14 +1,30 @@
 import React, { Component } from 'react';
+import ImportHTML from './ImportHTML'
 
 class Header extends Component {
+  constructor() {
+    super();
+    this.state = {
+      openModal: false
+    };
+  }
   importMD() {
-    alert('ss');
+    // alert('ss');
+    this.setState({
+      openModal: true
+    });
+  }
+  closeMD() {
+    this.setState({
+      openModal: false
+    });
   }
   render() {
     return (
       <header className="header">
         header
-        <button onClick={this.importMD}>导入</button>
+        <button onClick={this.importMD.bind(this)}>导入</button>
+        {this.state.openModal ? <ImportHTML/> : ''}
       </header>
     );
   }

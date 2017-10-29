@@ -22,9 +22,9 @@
   "dependencies": {
     "breakdance": "^3.0.1",
     "marked": "^0.3.6",
-    "react": "^15.6.1",
-    "react-dom": "^15.6.1",
-    "react-markings": "^1.1.4",
+    "react": "^16.0.0",
+    "react-dom": "^16.0.0",
+    "react-markings": "^1.1.6",
     "to-markdown": "^3.0.3"
   },
   "devDependencies": {
