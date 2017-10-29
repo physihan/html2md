@@ -36,20 +36,20 @@
   padding: 8px;
   /* flex:0.5; */
 }
-.modal{
+.modal {
   position: fixed;
-  top:0;
-  left:0;
+  top: 0;
+  left: 0;
 
   height: 100%;
   width: 100%;
-  background: #111;
-  opacity: 0.7;
-  
+  background: rgba(111, 111, 111, 0.7);
+  // opacity: 0.7;
 }
-.modal-main{
-margin: 100px auto;
-background: wheat;
-width:500px;
-height: 200px;
+.modal-main {
+  margin: 100px auto;
+  background-color: white;
+  width: 600px;
+  height: 400px;
+  overflow: scroll;
 }
