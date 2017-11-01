@@ -6,12 +6,8 @@ class ImportHTML extends Component {
   render() {
     return (
       <Modal>
-        <div className="modal-main" >
-      <iframe frameborder="0">
-      <body contentEditable="true">aaca</body>
-      
-      </iframe>
-
+        <div className="modal-main">
+          <iframe src="./temp.html" frameBorder="0" style={{width:'100%',height:'100%'}}/>
         </div>
       </Modal>
     );

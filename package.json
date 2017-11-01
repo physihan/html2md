@@ -4,7 +4,8 @@
   "description": "this tool convert html fragment to markdown,it would development with javascript node..etc.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start:dev": "webpack-dev-server"
   },
   "repository": {
     "type": "git",
