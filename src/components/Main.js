@@ -28,7 +28,7 @@ class Main extends Component {
           </textarea>
         </div>
         <div className="text-box preview">
-        213
+        213d
         </div>
       </div>
     );
