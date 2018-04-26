@@ -1,2 +1,2 @@
 # html2md
-this tool convert html fragment to markdown,it would development with javascript node..etc.
+convert html fragment to markdown,it is developed with javascript node..etc.
